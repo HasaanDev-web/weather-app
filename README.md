@@ -87,7 +87,7 @@ This project uses the **OpenWeather API** to fetch live weather data.
 
 2. Generate your API key.
 
-3. Replace the API key inside `script.js`:
+3. Add the API key inside `script.js`:
 
 ```javascript
 const API_KEY = "YOUR_API_KEY";
@@ -125,18 +125,6 @@ While building this project, I improved my skills in:
 - Displaying dynamic data
 - Creating responsive user interfaces
 - Writing clean and reusable code
-
----
-
-## 📸 Preview
-
-> Add a screenshot or GIF of your Weather Dashboard here.
-
-Example:
-
-```text
-images/weather-dashboard-preview.png
-```
 
 ---
 
