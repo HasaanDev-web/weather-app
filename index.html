@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading screen -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <h2>Loading Weather....</h2>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- header -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <div>
+                    <h1>Weather Dashboard</h1>
+                    <p id="currentDate">
+                        Friday, July 17
+                    </p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button id="locationBtn" class="icon-btn">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+
+                <button id="themeToggle" class="icon-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search section -->
+        <section class="search-section">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="cityInput" placeholder="Search for a city">
+
+            </div>
+
+            <button id="searchBtn">
+                Search
+            </button>
+        </section>
+
+        <!-- ========================= -->
+        <!-- Current Weather Card -->
+        <!-- ========================= -->
+
+        <section class="weather-card">
+
+            <div class="weather-left">
+
+                <img id="weatherIcon" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon">
+
+                <div>
+
+                    <h2 id="cityName">
+
+                        Karachi
+
+                    </h2>
+
+                    <p id="country">
+
+                        Pakistan
+
+                    </p>
+
+                    <p id="weatherDescription">
+
+                        Clear Sky
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="weather-right">
+
+                <h1 id="temperature">
+
+                    31°C
+
+                </h1>
+
+                <p>
+
+                    Feels Like
+
+                    <span id="feelsLike">
+
+                        34°C
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    High:
+
+                    <span id="tempMax">
+
+                        33°C
+
+                    </span> | Low:
+
+                    <span id="tempMin">
+
+                        27°C
+
+                    </span>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Weather Details -->
+
+        <section class="weather-details">
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-droplet"></i>
+
+                <h3>Humidity</h3>
+
+                <p id="humidity">
+
+                    72%
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-wind"></i>
+
+                <h3>Wind Speed</h3>
+
+                <p id="windSpeed">
+
+                    15 km/h
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                <h3>Pressure</h3>
+
+                <p id="pressure">
+
+                    1013 hPa
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-eye"></i>
+
+                <h3>Visibility</h3>
+
+                <p id="visibility">
+
+                    10 km
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-sun"></i>
+
+                <h3>UV Index</h3>
+
+                <p id="uvIndex">
+
+                    5
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <i class="fa-solid fa-temperature-half"></i>
+
+                <h3>Feels Like</h3>
+
+                <p id="detailsFeelsLike">
+
+                    34°C
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Sun Information -->
+        <!-- ========================= -->
+
+        <section class="sun-section">
+
+            <div class="sun-card">
+
+                <i class="fa-solid fa-sunrise"></i>
+
+                <div>
+
+                    <h3>Sunrise</h3>
+
+                    <p id="sunrise">
+
+                        05:48 AM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="sun-card">
+
+                <i class="fa-solid fa-sun"></i>
+
+                <div>
+
+                    <h3>Sunset</h3>
+
+                    <p id="sunset">
+
+                        07:12 PM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- 5-Day Forecast -->
+        <!-- ========================= -->
+
+        <section class="forecast-section">
+
+            <div class="section-title">
+
+                <h2>
+
+                    5-Day Forecast
+
+                </h2>
+
+            </div>
+
+            <div id="forecastContainer" class="forecast-container">
+
+                <div class="forecast-card">
+
+                    <h3>Mon</h3>
+
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="">
+
+                    <p>31°C</p>
+
+                </div>
+
+                <div class="forecast-card">
+
+                    <h3>Tue</h3>
+
+                    <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+
+                    <p>30°C</p>
+
+                </div>
+
+                <div class="forecast-card">
+
+                    <h3>Wed</h3>
+
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+
+                    <p>28°C</p>
+
+                </div>
+
+                <div class="forecast-card">
+
+                    <h3>Thu</h3>
+
+                    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="">
+
+                    <p>29°C</p>
+
+                </div>
+
+                <div class="forecast-card">
+
+                    <h3>Fri</h3>
+
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="">
+
+                    <p>32°C</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Recent Searches -->
+        <!-- ========================= -->
+
+        <section class="recent-section">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Recent Searches
+
+                </h2>
+
+            </div>
+
+            <div id="recentSearches" class="recent-searches">
+
+                <button class="recent-btn">Karachi</button>
+
+                <button class="recent-btn">Lahore</button>
+
+                <button class="recent-btn">Islamabad</button>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Error Message -->
+        <!-- ========================= -->
+
+        <section id="errorBox" class="error-box">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <h2>
+
+                City Not Found
+
+            </h2>
+
+            <p>
+
+                Please enter a valid city name and try again.
+
+            </p>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Footer -->
+        <!-- ========================= -->
+
+        <footer>
+
+            <p>
+
+                Powered by
+                <strong>OpenWeather API</strong>
+
+            </p>
+
+            <p>
+
+                Made with
+                <i class="fa-solid fa-heart"></i> by Hasaan
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- JavaScript -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
