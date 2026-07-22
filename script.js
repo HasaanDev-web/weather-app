@@ -6,8 +6,6 @@
 
 //============== API ==============//
 
-const API_KEY = "b7cfa9418e01ef358efafecb323b6670";
-
 const CURRENT_WEATHER_URL =
     "https://api.openweathermap.org/data/2.5/weather";
 
